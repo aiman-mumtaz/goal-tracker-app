@@ -6,14 +6,14 @@ import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
 
 export default function App() {
-  const [modalVisible, setModalVisible] = useState(false);
+  const [inputModalVisible, setInputModalVisible] = useState(false);
   const [courseGoals, setCourseGoals] = useState([]);
 
   function startAddGoalHandler() {
-    setModalVisible(true);
+    setInputModalVisible(true);
   }
   function endAddGoalHandler() {
-    setModalVisible(false);
+    setInputModalVisible(false);
   }
   function addGoalHandler(enteredGoalText) {
     setCourseGoals((currentCourseGoals) => [
@@ -39,7 +39,7 @@ export default function App() {
           onPress={startAddGoalHandler}
         />
         <GoalInput
-          visible={modalVisible}
+          visible={inputModalVisible}
           onAddGoal={addGoalHandler}
           onCancel={endAddGoalHandler}
         />
